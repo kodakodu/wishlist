@@ -5,13 +5,13 @@
   </div>
   <ul class="wish-list">
     @for (item of items; track item ) {
-      <li><div class="form-check"><label class="form-check-label"><input class="checkbox" type="checkbox">{{item.wishText}}</label></div></li>
+      <li><div class="form-check"><label class="form-check-label"><input class="checkbox" type="checkbox" [checked]="item.isCompleted">{{item.wishText}}</label></div></li>
     } 
   </ul>
   <ul class="wish-list">
     @for (item of items; track item ) {
       <li><div class="form-check"><label class="form-check-label">  <input class="checkbox"
-        type="checkbox" checked="false">
+        type="checkbox" [checked]="">
         {{item.wishText}}</label></div></li>
     } 
   </ul>
