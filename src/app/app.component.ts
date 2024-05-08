@@ -7,14 +7,14 @@ import { WishItem } from '../shared/models/wishItem';
   standalone: true,
   imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  styleUrl: './app.component.css',
 })
 export class AppComponent {
-  items : WishItem[]=[
+  items: WishItem[] = [
     new WishItem('Learn Angular'),
     new WishItem('Make coffee', true),
-    new WishItem('Find grass that cuts itself')
+    new WishItem('Find grass that cuts itself'),
   ];
   title = 'wishlist';
-  //console.log("OK");  
+  //console.log("OK");
 }

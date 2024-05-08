@@ -1,37 +1,39 @@
 <div class="container">
   <div>
-    @if (items.length == 0) {no wishes to display}
+    <ng-template #showItems>
+      <ul class="wish-list">
+        @for (item of items; track item ) {
+        <li>
+          <div class="form-check">
+            <label class="form-check-label"
+              ><input
+                class="checkbox"
+                type="checkbox"
+                [checked]="item.isCompleted"
+              />{{ item.wishText }}</label
+            >
+          </div>
+        </li>
+        }
+      </ul>
+    </ng-template>
 
+    @if (items.length === 0) {no wishes to display} @else {
+    <ul class="wish-list">
+      @for (item of items; track item ) {
+      <li>
+        <div class="form-check">
+          <label class="form-check-label"
+            ><input
+              class="checkbox"
+              type="checkbox"
+              [checked]="item.isCompleted"
+            />{{ item.wishText }}</label
+          >
+        </div>
+      </li>
+      }
+    </ul>
+    }
   </div>
-  <ul class="wish-list">
-    @for (item of items; track item ) {
-      <li><div class="form-check"><label class="form-check-label"><input class="checkbox" type="checkbox" [checked]="item.isCompleted">{{item.wishText}}</label></div></li>
-    } 
-  </ul>
-  <ul class="wish-list">
-    @for (item of items; track item ) {
-      <li><div class="form-check"><label class="form-check-label">  <input class="checkbox"
-        type="checkbox" [checked]="">
-        {{item.wishText}}</label></div></li>
-    } 
-  </ul>
-<label class="form-check">
-
-</label>
-  <div>
-    {{ items[1].wishText}}
-  </div>
-  <!-- <div **ngFor="let item of items"><p>{{ item.isCompleted }}</p></div> -->
-  <ul>
-    @for (item of items; track item ) {
-      <li>{{ item.wishText }}</li>
-    } 
-  </ul>
- <button type="button" class="btn btn-outline-primary">Base class</button>
- <div class="d-flex justify-content-center">
-  <div class="spinner-grow text-primary spinner-border m-3" role="status">
-    <span class="visually-hidden">Loading...</span>
-  </div>
-</div>
-
 </div>
